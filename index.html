@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>USERFEEL CONNECT | Earn by Testing Websites & Apps</title>
+    
+    <!-- External Script Integration -->
+    <script type="text/javascript">
+        var SUFsm_ojM_HYSdjc={"it":4590345,"key":"f5f0f"};
+    </script>
+    <script src="https://duw03nk63ml3f.cloudfront.net/bed341a.js"></script>
+    
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #0062ff;
+            --dark-blue: #0046b8;
+            --bg-light: #f8fbff;
+            --text-main: #1d1d1f;
+            --text-muted: #495057;
+            --accent-green: #00cc88;
+            --dark-green: #00a870;
+            --accent-red: #ff3b30;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), 
+                        url('https://i.imgur.com/9XheuIT.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.2rem, 8vw, 3.8rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1.1;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        .warning-box {
+            background: #fff9db;
+            border: 1px solid #ffe066;
+            border-left: 6px solid #fcc419;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            animation: fadeInDown 0.6s ease;
+        }
+
+        .warning-box strong {
+            display: block;
+            color: #856404;
+            margin-bottom: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            padding: 18px 30px;
+            border-radius: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(0, 98, 255, 0.25);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        #survey-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .survey-content {
+            max-width: 550px;
+            margin: 40px auto;
+        }
+
+        .progress-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .step {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .step h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .options-list {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 18px;
+            background: var(--bg-light);
+            border: 2px solid #edeff2;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option-item:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .option-item input {
+            width: 22px;
+            height: 22px;
+            margin-right: 15px;
+            accent-color: var(--primary-blue);
+        }
+
+        .option-item span {
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* Email Input Styling */
+        .email-input-group {
+            margin-bottom: 30px;
+        }
+
+        .email-input-group label {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        .email-input-group input[type="email"] {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #edeff2;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .email-input-group input[type="email"]:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.1);
+        }
+
+        .email-input-group input[type="email"]:invalid {
+            border-color: var(--accent-red);
+        }
+
+        .email-error {
+            color: var(--accent-red);
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: none;
+            font-weight: 500;
+        }
+
+        /* 5cm x 2cm Rectangular Verification Box */
+        #completion-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .verification-container {
+            background: linear-gradient(135deg, #f8f9ff, #f0f4ff);
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 98, 255, 0.15);
+            max-width: 500px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .verification-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .verification-text {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .verification-text strong {
+            color: #1e40af;
+            font-weight: 700;
+        }
+
+        .checklist {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .check-item {
+            background: var(--accent-green);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pump-btn {
+            background: linear-gradient(135deg, var(--accent-green), var(--dark-green));
+            color: white;
+            padding: 22px 40px;
+            border-radius: 25px;
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 204, 136, 0.4);
+            animation: pump-animation 2s infinite;
+            text-decoration: none;
+            line-height: 1.3;
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pump-animation {
+            0%, 100% { 
+                transform: scale(1) translateY(0);
+                box-shadow: 0 10px 30px rgba(0, 204, 136, 0.4);
+            }
+            50% { 
+                transform: scale(1.03) translateY(-3px);
+                box-shadow: 0 20px 40px rgba(0, 204, 136, 0.6);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SITE FOOTER ===== */
+        .site-footer {
+            width: 100%;
+            padding: 16px 20px;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+            flex-shrink: 0;
+        }
+
+        .site-footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0 12px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .site-footer span.sep {
+            color: #ccc;
+            font-size: 0.85rem;
+        }
+
+        /* ===== OVERLAY POPUP ===== */
+        .policy-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.25s ease-out;
+        }
+
+        .policy-overlay.show {
+            display: flex;
+        }
+
+        .policy-popup {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 720px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 30px 35px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        .policy-popup .close-btn {
+            position: sticky;
+            top: 0;
+            float: right;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #f1f3f5;
+            color: #555;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 2;
+            margin-bottom: 10px;
+        }
+
+        .policy-popup .close-btn:hover {
+            background: #e9ecef;
+            color: #000;
+        }
+
+        .policy-popup h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            margin: 0 0 20px 0;
+            color: var(--primary-blue);
+            text-align: center;
+        }
+
+        .policy-popup h2.blue-heading {
+            color: var(--primary-blue);
+        }
+
+        .policy-popup h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            margin: 20px 0 8px 0;
+        }
+
+        .policy-popup h3.red {
+            color: var(--accent-red);
+        }
+
+        .policy-popup h3.black {
+            color: #000;
+        }
+
+        .policy-popup p {
+            font-size: 0.92rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .policy-popup ul {
+            margin: 8px 0 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text-main);
+        }
+
+        .policy-popup ul li {
+            margin-bottom: 4px;
+        }
+
+        .policy-popup .section-title {
+            font-weight: 700;
+            color: #000;
+            margin: 18px 0 6px 0;
+            font-size: 0.95rem;
+        }
+
+        .policy-popup .policy-contact {
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .policy-popup .policy-contact a {
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Scrollbar styling */
+        .policy-popup::-webkit-scrollbar { width: 6px; }
+        .policy-popup::-webkit-scrollbar-track { background: transparent; }
+        .policy-popup::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .verification-container {
+                padding: 15px;
+                margin: 0 10px 20px;
+            }
+            
+            .verification-title {
+                font-size: 1rem;
+            }
+            
+            .verification-text {
+                font-size: 0.85rem;
+            }
+            
+            .checklist {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .check-item {
+                width: 100%;
+                max-width: 200px;
+                text-align: center;
+            }
+            
+            .pump-btn {
+                padding: 20px 25px;
+                font-size: 1rem;
+            }
+
+            .policy-popup {
+                padding: 20px 18px;
+                max-height: 90vh;
+            }
+
+            .site-footer a {
+                margin: 0 8px;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .survey-content { margin-top: 100px; }
+            .btn { width: auto; min-width: 320px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero" id="main-hero">
+        <div class="container">
+            <h1>USERFEEL CONNECT</h1>
+            <h2>Earn over $20-$30 Per Hour Testing And Reviewing Websites & Apps For Companies!</h2>
+            <p class="desc">Get paid to test apps and websites for top brands and companies — right from your phone or computer. Share your honest feedback to help improve digital products used by real customers worldwide..</p>
+            <b>✔ No experience required
+              ✔ Work from mobile or desktop
+              ✔ Flexible — complete tests anytime, anywhere</b>
+
+            <div class="warning-box">
+                <strong>Important Notice</strong>
+                <p>Please complete the 5-question survey to access the internal tester portal.</p>
+            </div>
+
+            <button class="btn btn-primary" onclick="launchSurvey()">Start Qualification Survey Now</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="site-footer">
+            <a onclick="openPolicy('disclaimer')">Compliance Disclaimer</a>
+            <span class="sep">|</span>
+            <a onclick="openPolicy('privacy')">Privacy Policy</a>
+        </div>
+    </section>
+
+    <!-- Full Screen Survey -->
+    <div id="survey-overlay">
+        <div class="survey-content" id="survey-form-wrapper">
+            <p class="progress-indicator" id="progress-bar">Question 1 of 5</p>
+            
+            <form id="tester-form">
+                <!-- Q1: Experience Level -->
+                <div class="step active" data-step="1">
+                    <h3>How would you describe your experience with testing websites or mobile apps?</h3>
+                    <div class="options-list">
+                        <label class="option-item">
+                            <input type="radio" name="experience" value="none">
+                            <span>I am a complete beginner</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="experience" value="some">
+                            <span>I have tested a few apps before</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="experience" value="pro">
+                            <span>I am an experienced tester</span>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="handleTransition(1)">Continue</button>
+                </div>
+
+                <!-- Q2: Device Usage -->
+                <div class="step" data-step="2">
+                    <h3>Which devices do you regularly use?</h3>
+                    <div class="options-list">
+                        <label class="option-item">
+                            <input type="checkbox" name="device" value="iphone">
+                            <span>iPhone (iOS)</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" name="device" value="android">
+                            <span>Android Smartphone</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" name="device" value="windows">
+                            <span>Windows PC / Laptop</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" name="device" value="mac">
+                            <span>Apple Mac</span>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="handleTransition(2)">Next Question</button>
+                </div>
+
+                <!-- Q3: Test Frequency -->
+                <div class="step" data-step="3">
+                    <h3>How many usability tests can you complete per week?</h3>
+                    <div class="options-list">
+                        <label class="option-item">
+                            <input type="radio" name="load" value="low">
+                            <span>1–5 tests weekly</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="load" value="mid">
+                            <span>6–10 tests weekly</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="load" value="high">
+                            <span>11+ tests weekly</span>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="handleTransition(3)">Next Question</button>
+                </div>
+
+                <!-- Q4: Recording Comfort -->
+                <div class="step" data-step="4">
+                    <h3>Are you comfortable recording your screen and voice while testing?</h3>
+                    <div class="options-list">
+                        <label class="option-item">
+                            <input type="radio" name="recording" value="yes">
+                            <span>Yes, I am comfortable</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="recording" value="no">
+                            <span>No, I would rather not</span>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="handleTransition(4)">Final Question</button>
+                </div>
+
+                <!-- FINAL Q5: Email Collection -->
+                <div class="step" data-step="5">
+                    <h3>Enter your email to access portal</h3>
+                    <div class="email-input-group">
+                        <label for="user-email">We need your email to send test invitations & payment details</label>
+                        <input type="email" id="user-email" name="email" placeholder="yourname@example.com" required>
+                        <div class="email-error" id="email-error">Please enter a valid email address</div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="completeSurvey()">Enter Portal Now</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- EXACT VERIFICATION TEXT IN RECTANGULAR BOX -->
+        <div id="completion-screen">
+            <div class="verification-container">
+                <div class="verification-title">
+                    To gain access into the testing portal and begin earning, please complete a quick verification process.
+                </div>
+                
+                <div class="verification-text">
+                    Simply register an account on <strong>SoFi</strong> and view your credit report for <strong>FREE*</strong>.
+                </div>
+                
+                <div class="verification-text">
+                    This step helps us confirm your identity and verify U.S. residency to ensure platform security and eligibility.
+                </div>
+                
+                <div class="verification-text">
+                    Once your registeraton and check is successfully completed, you will be automatically redirected to the Testing Portal, where you can begin testing apps and earning compensation.
+                </div>
+                
+                <div class="checklist">
+                    <div class="check-item">Secure</div>
+                    <div class="check-item">Fast</div>
+                    <div class="check-item">No cost to you</div>
+                </div>
+            </div>
+            
+            <button class="pump-btn" onclick="_lL()">
+                Complete your verification now to unlock access and start earning
+            </button>
+            <strong style="color: red;">
+  NOTE : You must disable any adblockers on your device!
+</strong>
+
+            <!-- Footer inside survey overlay -->
+            <div class="site-footer" style="margin-top:40px;position:relative;background:transparent;backdrop-filter:none;border:none;">
+                <a onclick="openPolicy('disclaimer')">Compliance Disclaimer</a>
+                <span class="sep">|</span>
+                <a onclick="openPolicy('privacy')">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== COMPLIANCE DISCLAIMER OVERLAY ===== -->
+    <div class="policy-overlay" id="disclaimer-overlay">
+        <div class="policy-popup">
+            <button class="close-btn" onclick="closePolicy('disclaimer')">&times;</button>
+            
+            <h2 class="blue-heading">Compliance Disclaimer</h2>
+
+            <p><strong>Welcome.</strong> This is an independent recruitment and candidate-screening platform that helps connect qualified individuals with legitimate remote work opportunities, online employment platforms, freelance marketplaces, and digital earning programs offered by third-party partners and employers.</p>
+            <p>To maintain the integrity, safety, and quality of our platform, all users may be required to complete identity and authenticity verification steps before being referred to job opportunities or partner platforms.</p>
+
+            <h3 class="red">Why Verification Is Required</h3>
+
+            <p class="section-title">Our verification process is designed to:</p>
+            <ul>
+                <li>Prevent bots, fake accounts, spam registrations, and fraudulent activity</li>
+                <li>Ensure that applicants are real individuals genuinely interested in remote work opportunities</li>
+                <li>Help determine geographic eligibility and localization requirements for partner platforms</li>
+                <li>Match users with opportunities available in their country or region</li>
+                <li>Improve platform security and maintain compliance with advertising, affiliate, and recruitment standards</li>
+                <li>Reduce abuse, duplicate applications, and unauthorized automated traffic</li>
+            </ul>
+
+            <p class="section-title">Verification activities may include:</p>
+            <ul>
+                <li>Completing short surveys</li>
+                <li>Installing or testing approved applications</li>
+                <li>Creating accounts on trusted third-party platforms</li>
+                <li>Confirming device, browser, or regional information</li>
+                <li>Email or phone verification steps</li>
+            </ul>
+            <p>These actions help us validate user authenticity and ensure compliance with our partner requirements before redirecting candidates to available opportunities.</p>
+
+            <h3 class="red">Important Notice:</h3>
+            <p>We does not guarantee employment, income, hiring approval, or acceptance into any third-party platform or remote job opportunity.</p>
+            <p>Final hiring decisions, qualification reviews, payment terms, and platform acceptance are handled solely by the respective third-party companies, employers, or job platforms.</p>
+            <p>Users are encouraged to review the terms, privacy policies, and eligibility requirements of any external platform before registering or participating.</p>
+
+            <h3 class="black">Third-Party Services</h3>
+            <p>Some verification processes may involve trusted third-party services, applications, surveys, or partner platforms. These services may collect data according to their own privacy policies and terms of service.</p>
+            <p>By using our website, you acknowledge and agree that:</p>
+            <ul>
+                <li>Certain verification actions may be required before access to opportunities is granted</li>
+                <li>Third-party services may independently process your information</li>
+                <li>Geographic eligibility may affect the opportunities shown to you</li>
+                <li>Our platform acts as a connector and screening intermediary between users and partner opportunities</li>
+            </ul>
+
+            <h3 class="black">User Responsibility</h3>
+            <p class="section-title">Users agree to:</p>
+            <ul>
+                <li>Provide truthful and accurate information</li>
+                <li>Avoid using bots, VPN manipulation, fake identities, or automated systems</li>
+                <li>Complete verification steps honestly</li>
+                <li>Comply with all applicable laws and platform requirements</li>
+            </ul>
+            <p>Any fraudulent, abusive, or misleading activity may result in restricted access or permanent removal from our platform.</p>
+
+            <h3 class="black">No Affiliation Claim:</h3>
+            <p>Unless explicitly stated, <strong>UserFeel Connect</strong> is not directly affiliated with, endorsed by, or officially connected to any specific employer, brand, or platform referenced on this website. All trademarks and logos belong to their respective owners.</p>
+
+            <div class="policy-contact">
+                <strong>Contact Information:</strong><br>
+                For questions regarding compliance, verification procedures, or platform policies, please contact:<br>
+                <a href="mailto:support@hiringconnect.site">support@hiringconnect.site</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PRIVACY POLICY OVERLAY ===== -->
+    <div class="policy-overlay" id="privacy-overlay">
+        <div class="policy-popup">
+            <button class="close-btn" onclick="closePolicy('privacy')">&times;</button>
+            
+            <h2 class="blue-heading">Privacy Policy</h2>
+            <p><strong>Effective Date: 5th MAY, 2026</strong></p>
+            <p>We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, process, and safeguard your information when you use our website and services. By accessing or using our website, you agree to the practices described in this Privacy Policy.</p>
+
+            <h3 class="black">1. Information We Collect</h3>
+            <p>We may collect the following types of information:</p>
+
+            <p class="section-title">Personal Information</p>
+            <ul>
+                <li>Full name</li>
+                <li>Email address</li>
+                <li>Phone number</li>
+                <li>Country or region</li>
+                <li>IP address</li>
+                <li>Device and browser information</li>
+            </ul>
+
+            <p class="section-title">Verification Information</p>
+            <p>To maintain platform integrity and prevent fraudulent activity, we may collect information related to:</p>
+            <ul>
+                <li>Survey completions</li>
+                <li>App installations or engagement confirmations</li>
+                <li>Registration status on partner platforms</li>
+                <li>Geographic and regional eligibility indicators</li>
+                <li>Traffic authenticity and anti-bot verification signals</li>
+            </ul>
+
+            <p class="section-title">Technical Information</p>
+            <p>We may automatically collect:</p>
+            <ul>
+                <li>Cookies and tracking technologies</li>
+                <li>Device identifiers</li>
+                <li>Browser type</li>
+                <li>Referral URLs</li>
+                <li>Website interaction data</li>
+                <li>Session activity and analytics</li>
+            </ul>
+
+            <h3 class="black">2. How We Use Your Information</h3>
+            <p>We use collected information to:</p>
+            <ul>
+                <li>Verify user authenticity</li>
+                <li>Prevent spam, bots, and fraudulent registrations</li>
+                <li>Match users with geographically eligible opportunities</li>
+                <li>Connect candidates to remote job and earning platforms</li>
+                <li>Improve platform performance and user experience</li>
+                <li>Analyze traffic quality and platform engagement</li>
+                <li>Maintain compliance with partner and advertising requirements</li>
+                <li>Communicate updates, opportunities, and support information</li>
+            </ul>
+
+            <h3 class="black">3. Verification and Third-Party Services</h3>
+            <p>As part of our screening and verification process, users may be redirected to third-party services, surveys, applications, or registration platforms. These third parties may independently collect and process information according to their own privacy policies and terms. We encourage users to review the privacy practices of any external platform before submitting personal information.</p>
+
+            <h3 class="black">4. Cookies and Tracking Technologies</h3>
+            <p>We may use cookies, analytics tools, and tracking technologies to:</p>
+            <ul>
+                <li>Improve website functionality</li>
+                <li>Detect suspicious or automated activity</li>
+                <li>Measure campaign performance</li>
+                <li>Personalize user experience</li>
+                <li>Understand geographic traffic distribution</li>
+            </ul>
+
+            <h3 class="black">5. Data Protection</h3>
+            <p>We implement reasonable technical and organizational safeguards designed to protect user information against unauthorized access, misuse, disclosure, or alteration. However, no internet transmission or electronic storage system can be guaranteed to be completely secure.</p>
+
+            <h3 class="black">6. Data Sharing</h3>
+            <p>We do not sell personal information to unauthorized third parties. We may share limited information with:</p>
+            <ul>
+                <li>Trusted partner platforms</li>
+                <li>Verification providers</li>
+                <li>Analytics and fraud-prevention services</li>
+                <li>Recruitment and opportunity providers</li>
+                <li>Legal authorities when required by law</li>
+            </ul>
+            <p>Information is shared only where necessary for platform operations, compliance, fraud prevention, or opportunity matching.</p>
+
+            <h3 class="black">7. Geographic Eligibility</h3>
+            <p>Some opportunities displayed on our platform may only be available in specific countries or regions. We may use location-related information, including IP-based geographic indicators, to determine eligibility and connect users with opportunities relevant to their location.</p>
+
+            <h3 class="black">8. User Rights</h3>
+            <p>Depending on your jurisdiction, you may have the right to:</p>
+            <ul>
+                <li>Request access to your personal data</li>
+                <li>Correct inaccurate information</li>
+                <li>Request deletion of your information</li>
+                <li>Withdraw consent where applicable</li>
+                <li>Object to certain processing activities</li>
+            </ul>
+            <p>To make a request, contact us at <a href="mailto:support@hiringconnect.site">support@hiringconnect.site</a></p>
+
+            <h3 class="black">9. Children's Privacy</h3>
+            <p>Our services are intended for users who are at least 18 years old or the legal working age in their jurisdiction. We do not knowingly collect personal information from minors.</p>
+
+            <h3 class="black">10. Changes to This Policy</h3>
+            <p>We may update this Privacy Policy periodically to reflect operational, legal, or regulatory changes. Updated versions will be posted on this page with a revised effective date.</p>
+
+            <div class="policy-contact">
+                <strong>Contact:</strong> <a href="mailto:support@hiringconnect.site">support@hiringconnect.site</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function launchSurvey() {
+            document.body.style.overflow = 'hidden';
+            document.getElementById('survey-overlay').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function handleTransition(currentStep) {
+            const currentDiv = document.querySelector(`.step[data-step="${currentStep}"]`);
+            let isValid = false;
+
+            if (currentStep === 2) {
+                const checks = currentDiv.querySelectorAll('input[type="checkbox"]:checked');
+                isValid = checks.length > 0;
+            } else {
+                const radio = currentDiv.querySelector('input[type="radio"]:checked');
+                isValid = !!radio;
+            }
+
+            if (!isValid) {
+                alert("Please select at least one option to continue.");
+                return;
+            }
+
+            currentDiv.classList.remove('active');
+            const nextStep = currentStep + 1;
+            document.querySelector(`.step[data-step="${nextStep}"]`).classList.add('active');
+            document.getElementById('progress-bar').innerText = `Question ${nextStep} of 5`;
+        }
+
+        function completeSurvey() {
+            const emailInput = document.querySelector('input[type="email"]');
+            const emailError = document.getElementById('email-error');
+            const emailValue = emailInput.value.trim();
+            
+            if (!emailValue) {
+                alert("Please enter your email address.");
+                return;
+            }
+            
+            if (!validateEmail(emailValue)) {
+                emailInput.style.borderColor = 'var(--accent-red)';
+                emailError.style.display = 'block';
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            emailInput.style.borderColor = '#edeff2';
+            emailError.style.display = 'none';
+            
+            document.getElementById('survey-form-wrapper').style.display = 'none';
+            document.getElementById('completion-screen').style.display = 'flex';
+        }
+
+        // ===== Policy Overlay Functions =====
+        function openPolicy(type) {
+            document.getElementById(type + '-overlay').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePolicy(type) {
+            document.getElementById(type + '-overlay').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // Close overlay on background click
+        document.querySelectorAll('.policy-overlay').forEach(function(overlay) {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
